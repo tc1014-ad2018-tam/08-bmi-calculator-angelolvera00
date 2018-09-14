@@ -1,7 +1,14 @@
+/*
+ * This program is made to help the user calculate their BMI using either metric or imperial units
+ *
+ * Author: Angel Olvera
+ * August 23, 20118
+ * Mail: angelolvera00@gmail.com
+ */
+
 #include <stdio.h>
 
-#include <math.h>
-
+//First Function where I stored all the different messages that the user will receive based on their BMI results.
 double categories (double BMI){
     if(BMI<18.5){
         printf("You are underweighted");
@@ -16,12 +23,12 @@ double categories (double BMI){
         printf("You are obese");
     }
 }
-
+//Function that when called, will perform the operation of the BMI using metric units
 int calcmetricBMI(double metricweight, double metricheight){
     double metricBMI = (metricweight/(metricheight*metricheight));
     return metricBMI;
 }
-
+//Function that when called, will perform the operation of the BMI using imperial units that will later be converted to metric units
 int calcimperialBMI(double imperialweight, double imperialheight){
     double result;
     double metricweight;
@@ -41,11 +48,12 @@ int main() {
     double imperialheight;
     double BMI;
     int choice;
-
+//"Menu" that appears to the user and makes them choose which unit they want to use.
     printf("Select:\n 1. Metric\n 2. Imperial\n");
     scanf("%i", &choice);
 
     switch(choice){
+        //The first case is using metric units, the operation to calculate the BMI is called in order to perform the operation and the result is given.
         case 1:
             do {
                 printf("Enter height in metric units\n");
@@ -59,6 +67,7 @@ int main() {
                 break;
 
         case 2:
+            //The second case is using metric units, the operation to calculate the BMI is called in order to perform the operation with imperial units this time, and the result is given.
             do {
                 printf("Enter height in imperial units\n");
                 scanf("%lf", &imperialheight);
@@ -70,6 +79,7 @@ int main() {
             categories(BMI);
             break;
         default:
+            //An error message will appear if the user writes something else
             printf("Invalid");
             break;
     }
