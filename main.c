@@ -2,7 +2,7 @@
  * This program is made to help the user calculate their BMI using either metric or imperial units
  *
  * Author: Angel Olvera
- * August 23, 20118
+ * September 13, 20118
  * Mail: angelolvera00@gmail.com
  */
 
